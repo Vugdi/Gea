@@ -98,86 +98,81 @@
 
 
     
-    var singleMarker = L.marker([58.97112, 9.93317], { icon: myIcon});
+    var singleMarker = L.marker([58.97112, 9.93317], );
     var popup = singleMarker.bindPopup('Mølen').openPopup()
-    popup.addTo(map)
-
-    var singleMarker2 = L.marker([58.99317, 9.74636], { icon: myIcon});
-    var popup = singleMarker2.bindPopup('Steinvika').openPopup()
-    popup.addTo(map)
-
-    var singleMarker3 = L.marker([59.00757, 9.70297], { icon: myIcon});
-    var popup = singleMarker3.bindPopup('Rognstranda').openPopup()
-    popup.addTo(map)
-
-    var singleMarker4 = L.marker([58.86469, 9.59557], { icon: myIcon});
-    var popup = singleMarker4.bindPopup('Jomfruland').openPopup()
-    popup.addTo(map)
-
-    var singleMarker5 = L.marker([58.78508, 9.38415], { icon: myIcon});
-    var popup = singleMarker5.bindPopup('Stangnes').openPopup()
-    popup.addTo(map)
-
-    var singleMarker6 = L.marker([58.86979, 9.40996], { icon: myIcon});
-    var popup = singleMarker6.bindPopup('Steinmann').openPopup()
-    popup.addTo(map)  
     
-    var singleMarker7 = L.marker([59.00343, 9.74727], { icon: myIcon});
+
+    var singleMarker2 = L.marker([58.99317, 9.74636],);
+    var popup = singleMarker2.bindPopup('Steinvika').openPopup()
+    
+    var singleMarker3 = L.marker([59.00757, 9.70297], );
+    var popup = singleMarker3.bindPopup('Rognstranda').openPopup()
+    
+    var singleMarker4 = L.marker([58.86469, 9.59557], );
+    var popup = singleMarker4.bindPopup('Jomfruland').openPopup()
+    
+
+    var singleMarker5 = L.marker([58.78508, 9.38415], );
+    var popup = singleMarker5.bindPopup('Stangnes').openPopup()
+   
+    var singleMarker6 = L.marker([58.86979, 9.40996], );
+    var popup = singleMarker6.bindPopup('Steinmann').openPopup()
+    
+    
+    var singleMarker7 = L.marker([59.00343, 9.74727], );
     var popup = singleMarker7.bindPopup('Kongshavn').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker8 = L.marker([59.27087, 9.27343], { icon: myIcon});
+    var singleMarker8 = L.marker([59.27087, 9.27343], );
     var popup = singleMarker8.bindPopup('Holla kirkeruin').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker9 = L.marker([59.2818, 9.28086], { icon: myIcon});
+    var singleMarker9 = L.marker([59.2818, 9.28086], );
     var popup = singleMarker9.bindPopup('Geostien langs Nordsjø').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker10 = L.marker([59.20167, 9.62426], { icon: myIcon});
+    var singleMarker10 = L.marker([59.20167, 9.62426], );
     var popup = singleMarker10.bindPopup('Katpitelberget').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker11 = L.marker([59.02254, 10.17933], { icon: myIcon});
+    var singleMarker11 = L.marker([59.02254, 10.17933], );
     var popup = singleMarker11.bindPopup('Ula').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker12 = L.marker([58.97984, 10.02642], { icon: myIcon});
+    var singleMarker12 = L.marker([58.97984, 10.02642], );
     var popup = singleMarker12.bindPopup('Rakke').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker13 = L.marker([59.28121, 9.73574], { icon: myIcon});
+    var singleMarker13 = L.marker([59.28121, 9.73574], );
     var popup = singleMarker13.bindPopup('Verbøtjern').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker14 = L.marker([59.24732, 9.79199], { icon: myIcon});
+    var singleMarker14 = L.marker([59.24732, 9.79199], );
     var popup = singleMarker14.bindPopup('Gorningen').openPopup()
-    popup.addTo(map)
-
-    var singleMarker15 = L.marker([59.21969, 9.47593], { icon: myIcon});
+    
+    var singleMarker15 = L.marker([59.21969, 9.47593], );
     var popup = singleMarker15.bindPopup('Mikaelshula').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker16 = L.marker([59.05974, 9.7311], { icon: myIcon});
+    var singleMarker16 = L.marker([59.05974, 9.7311], );
     var popup = singleMarker16.bindPopup('Løvøya').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker17 = L.marker([58.99558, 9.81733], { icon: myIcon});
+    var singleMarker17 = L.marker([58.99558, 9.81733], );
     var popup = singleMarker17.bindPopup('Låven').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker18 = L.marker([59.32725, 9.65308], { icon: myIcon});
+    var singleMarker18 = L.marker([59.32725, 9.65308], );
     var popup = singleMarker18.bindPopup('Skriua').openPopup()
-    popup.addTo(map)
+    
 
-    var singleMarker19 = L.marker([59.34449, 9.91249], { icon: myIcon});
+    var singleMarker19 = L.marker([59.34449, 9.91249], );
     var popup = singleMarker19.bindPopup('Kjærra fossepark').openPopup()
     
 
     //layer controll
     var baseMaps = {
         "osm": osm,
-        "Vann": Stamen_Watercolor,
         "Google Streets": googleStreets,
         "Google Satallitt": googleSat,
         
@@ -185,7 +180,6 @@
     // Grupperer sammen lokasjonene 
     var Gruppe = L.layerGroup([singleMarker, singleMarker2, singleMarker3, singleMarker4, singleMarker5, singleMarker6, singleMarker7, singleMarker8, singleMarker9, singleMarker10, singleMarker11, singleMarker12, singleMarker13, singleMarker14, singleMarker15, singleMarker16, singleMarker17, singleMarker18, singleMarker19])
     var overlayMaps = {
-        "Lokasjoner": Gruppe,
         'Berggrunn': Berggrunn,
         
     };
