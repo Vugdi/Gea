@@ -54,33 +54,14 @@
     osm.addTo(map);
 
 	// Hent GeoJSON-fil og legg til på kartet
-	fetch('data/BerggrunnGea.geojson')  // GeoJSON-filen må være tilgjengelig her
-    		.then(response => response.json())
-    		.then(data => {
-        		// Legg til GeoJSON-laget på kartet
-       	 		L.geoJSON(data, {
-            			onEachFeature: function (feature, layer) {
-                			// Mouseover funksjon: Vis informasjon når musen holder over et objekt
-                			if (feature.properties && feature.properties.bergart) {
-                    				layer.bindTooltip(feature.properties.bergart, {
-                        				permanent: false,   // Tooltip vises bare når du holder musen over
-                        				direction: 'top',    // Tooltip skal vises på toppen av markøren
-                        				opacity: 0.8         // Gjennomsiktighet på tooltip
-                    				});
-                			}
-            			},
-            			style: function (feature) {
-                			return {
-                    				color: feature.properties.color || 'blue',  // Farge på geometrien (bruk farge fra GeoJSON)
-                    				weight: 2,
-                    				opacity: 1,
-                    				fillColor: feature.properties.color || 'lightblue',  // Fillfarge
-                    				fillOpacity: 0.5   // Gjennomsiktighet på fyll
-                			};
-            			}
-        		}).addTo(map); // Legg GeoJSON-laget på kartet
-    		})
-    		.catch(error => console.log('Error loading GeoJSON:', error));
+	var geojsonLayer = L.geoJSON().addTo(map);
+
+	fetch('data/berggrunnGea.geojson')  // GeoJSON-filen må være tilgjengelig her
+		.then(response => response.json())
+		.then(data => {
+			geojsonLayer.addData(data); // Legger GeoJSON-dataene til laget
+		})
+		.catch(error => console.log('Feil ved lastning av GeoJSON:', error));
 
 
     // vann
@@ -228,7 +209,8 @@
     var Gruppe = L.layerGroup([singleMarker, singleMarker2, singleMarker3, singleMarker4, singleMarker5, singleMarker6, singleMarker7, singleMarker8, singleMarker9, singleMarker10, singleMarker11, singleMarker12, singleMarker13, singleMarker14, singleMarker15, singleMarker16, singleMarker17, singleMarker18, singleMarker19])
     var overlayMaps = {
         'Berggrunn': Berggrunn,
-	'losmasser': Losmasser,
+		'losmasser': Losmasser,
+		'Berggrunn GeoJSON': geojsonLayer,
         
     };
 
