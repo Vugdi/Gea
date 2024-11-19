@@ -56,7 +56,7 @@
 	// Hent GeoJSON-fil og legg til på kartet
 	var geojsonLayer = L.geoJSON().addTo(map);
 
-	fetch('data/berggrunnGea.geojson')  // GeoJSON-filen må være tilgjengelig her
+	fetch('data/BerggrunnGea.geojson')  // GeoJSON-filen må være tilgjengelig her
 		.then(response => response.json())
 		.then(data => {
 			geojsonLayer.addData(data); // Legger GeoJSON-dataene til laget
