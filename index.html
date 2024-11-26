@@ -89,15 +89,16 @@
         loadGeoJSON();  // Når CSV er lastet, last GeoJSON
     });
 
-    function loadGeoJSON() {
+     function loadGeoJSON() {
         fetch('data/BerggrunnGea.geojson')
             .then(response => response.json())
             .then(data => {
                 // Tilpass fargene til GeoJSON dataene
                 L.geoJSON(data, {
                     style: function (feature) {
-                        const farge = bergartColors[feature.properties.kode];
-                        console.log(`Kode: ${feature.properties.kode}, Farge: ${farge}`); // Debugging linje
+                        // Bruk "hovedbergart" eller "hovedberga" fra GeoJSON-filen
+                        const farge = bergartColors[feature.properties.hovedbergart] || bergartColors[feature.properties.hovedberga];
+                        console.log(`hovedbergart: ${feature.properties.hovedbergart}, Farge: ${farge}`); // Debugging linje
                         
                         return {
                             fillColor: farge ? `rgb(${farge})` : 'gray', // Standard grå om ingen farge
@@ -109,6 +110,7 @@
                 }).addTo(map);
             })
             .catch(error => console.log('Feil ved lastning av GeoJSON:', error));
+    }
     }
 
 
