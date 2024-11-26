@@ -77,6 +77,10 @@
                         bergartColors[kode] = rgb.trim();
                     }
                 });
+                console.log('Bergartfarger lastet:', bergartColors);  // Debugging linje for å se innholdet av bergartColors
+            })
+            .catch(error => {
+                console.error('Feil ved lasting av CSV:', error);
             });
     }
 
@@ -93,6 +97,8 @@
                 L.geoJSON(data, {
                     style: function (feature) {
                         const farge = bergartColors[feature.properties.kode];
+                        console.log(`Kode: ${feature.properties.kode}, Farge: ${farge}`); // Debugging linje
+                        
                         return {
                             fillColor: farge ? `rgb(${farge})` : 'gray', // Standard grå om ingen farge
                             fillOpacity: 0.5,
@@ -101,7 +107,8 @@
                         };
                     }
                 }).addTo(map);
-            });
+            })
+            .catch(error => console.log('Feil ved lastning av GeoJSON:', error));
     }
 
 
