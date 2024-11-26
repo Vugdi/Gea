@@ -62,6 +62,47 @@
 			geojsonLayer.addData(data); // Legger GeoJSON-dataene til laget
 		})
 		.catch(error => console.log('Feil ved lastning av GeoJSON:', error));
+		
+	// Last CSV-fil for å koble RGB-farger
+    var bergartColors = {};
+
+    function loadCSV(url) {
+        return fetch(url)
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.split('\n');
+                lines.forEach(line => {
+                    const [kode, , rgb] = line.split(';');
+                    if (kode && rgb) {
+                        bergartColors[kode] = rgb.trim();
+                    }
+                });
+            });
+    }
+
+    // Hent farger fra CSV-filen
+    loadCSV('data/bergart_farger.csv').then(() => {
+        loadGeoJSON();  // Når CSV er lastet, last GeoJSON
+    });
+
+    function loadGeoJSON() {
+        fetch('data/BerggrunnGea.geojson')
+            .then(response => response.json())
+            .then(data => {
+                // Tilpass fargene til GeoJSON dataene
+                L.geoJSON(data, {
+                    style: function (feature) {
+                        const farge = bergartColors[feature.properties.kode];
+                        return {
+                            fillColor: farge ? `rgb(${farge})` : 'gray', // Standard grå om ingen farge
+                            fillOpacity: 0.5,
+                            color: 'black',
+                            weight: 1
+                        };
+                    }
+                }).addTo(map);
+            });
+    }
 
 
     // vann
