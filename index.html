@@ -118,9 +118,12 @@
     });
 
 
-    
-    var singleMarker = L.marker([58.97102, 9.83456], );
-    var popup = singleMarker.bindPopup('Mølen').openPopup()
+    var popupContent1 = '<div style="max-width: 400px; text-align: center;">' + 
+                    '<img src="https://static.wixstatic.com/media/461ff3_cc9f4326ea724ce1bf329ae54cb111eb~mv2.jpg" alt="Bildebeskrivelse" style="width:100%; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);">' +
+                    '<p style="margin-top: 5px; font-size: 14px;">Mølen</p>' +
+                    '<a href="https://www.geoparken.no/steder-aa-besoeke/rognstranda" style="display: block; margin-top: 5px; color: #007BFF; text-decoration: none; font-weight: bold;">Gå til underside</a>' +
+                    '</div>';
+    var singleMarker = L.marker([58.97102, 9.83456]).bindPopup(popupContent1).openPopup();
     
 
     var singleMarker2 = L.marker([58.99317, 9.74636],);
@@ -130,7 +133,7 @@
     var popupContent3 = '<div style="max-width: 400px; text-align: center;">' + 
                     '<img src="https://static.wixstatic.com/media/461ff3_cc9f4326ea724ce1bf329ae54cb111eb~mv2.jpg" alt="Bildebeskrivelse" style="width:100%; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);">' +
                     '<p style="margin-top: 5px; font-size: 14px;">Rognstranda</p>' +
-                    '<a href="https://www.geoparken.no/steder-aa-besoeke/rognstranda" style="display: block; margin-top: 5px; color: #007BFF; text-decoration: none; font-weight: bold;">Gå til underside</a>' +
+                    '<a href="https://www.geoparken.no/steder-aa-besoeke/mølen" style="display: block; margin-top: 5px; color: #007BFF; text-decoration: none; font-weight: bold;">Gå til underside</a>' +
                     '</div>';
     var singleMarker3 = L.marker([59.00757, 9.70297]).bindPopup(popupContent3).openPopup();
     
