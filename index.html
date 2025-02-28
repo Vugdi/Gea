@@ -125,9 +125,12 @@
                     '</div>';
     var singleMarker = L.marker([58.97102, 9.83456]).bindPopup(popupContent1).openPopup();
     
-
-    var singleMarker2 = L.marker([58.99317, 9.74636],);
-    var popup = singleMarker2.bindPopup('Steinvika').openPopup()
+    var popupContent2 = '<div style="max-width: 400px; text-align: center;">' + 
+                    '<img src="https://static.wixstatic.com/media/461ff3_cc9f4326ea724ce1bf329ae54cb111eb~mv2.jpg" alt="Bildebeskrivelse" style="width:100%; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);">' +
+                    '<p style="margin-top: 5px; font-size: 14px;">Steinvika</p>' +
+                    '<a href="https://www.geoparken.no/steder-aa-besoeke/steinvika" style="display: block; margin-top: 5px; color: #007BFF; text-decoration: none; font-weight: bold;">Gå til underside</a>' +
+                    '</div>';
+    var singleMarker2 = L.marker([58.99317, 9.74636]).bindPopup(popupContent2).openPopup();
     
    
     var popupContent3 = '<div style="max-width: 400px; text-align: center;">' + 
