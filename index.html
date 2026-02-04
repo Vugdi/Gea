@@ -44,7 +44,9 @@
 
 <script>
     // map initialization
-    var map = L.map('map').setView([59.07019, 9.59538], 9.5);
+    var map = L.map('map', {
+    scrollWheelZoom: false
+	}).setView([59.07019, 9.59538], 9.5);
 
     //osm layer
     var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
